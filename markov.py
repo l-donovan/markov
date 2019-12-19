@@ -78,10 +78,10 @@ for c in range(width ** DIMENSIONS):
         i += 1
         idx[i] += 1
 
-    mag = np.linalg.norm(prob_mat[tuple(idx)])
+    mag = prob_mat[tuple(idx)].sum()
 
     if (mag > 0):
-        prob_mat[tuple(idx)] /= prob_mat[tuple(idx)].sum()
+        prob_mat[tuple(idx)] /= mag
 
 # Generation phase
 
